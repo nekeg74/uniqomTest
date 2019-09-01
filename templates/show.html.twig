@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %} Show Car {% endblock %}
+{% block body %}
+<ul>
+    <li>
+        {{ car.brand }}
+    </li>
+    <li>
+        {{ car.model }}
+    </li>
+    <li>
+        {{ car.isLeft }}
+    </li>
+
+</ul>
+{% endblock %}

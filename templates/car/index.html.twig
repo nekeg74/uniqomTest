@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %} Car Manager {% endblock %}
+{% block body %}
+
+    {% if cars %}
+        <table class="table table-striped" id="car-table">
+            <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Wheel side</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for carData in cars %}
+                <tr>
+                    <td>{{ carData.brand }}</td>
+                    <td>{{ carData.model }}</td>
+                    {% if carData.isLeft %}
+                        <td>Left</td>
+                    {% else %}
+                        <td>Right</td>
+                    {% endif %}
+
+                    <td>
+                        <a href="/edit/{{ carData.id }}" class="btn btn-dark">Edit</a>
+                        <a href="/delete/{{ carData.id }}" class="btn btn-primary delete-car" data-id="{{ carData.id }}" >Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No cars to display, create new or add a table</p>
+    {% endif %}
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

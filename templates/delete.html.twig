@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %} Delete car {% endblock %}
+{% block body %}
+    <h1>Car deleted:</h1>
+    <ul>
+        <li>
+            {{ car.brand }}
+        </li>
+        <li>
+            {{ car.model }}
+        </li>
+        {% if car.isLeft %}
+            <li>Left</li>
+        {% else %}
+            <li>Right</li>
+        {% endif %}
+
+    </ul>
+{% endblock %}

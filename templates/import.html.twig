@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %} Import table {% endblock %}
+{% block body %}
+
+    <form method="POST" action="{{ path('upload') }}"  enctype="multipart/form-data">
+        <input type="file" name="csvFile">
+        <button type="submit" class="btn btn-info">Upload</button>
+    </form>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
